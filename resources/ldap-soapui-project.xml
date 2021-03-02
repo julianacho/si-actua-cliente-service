@@ -78,4 +78,15 @@
          <ldap:url>https://sdgmultifactor.azurewebsites.net/api/1.0/LdapAutenticateV1/Login</ldap:url>
       </ldap:ldapRequest>\r
    </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/Ldap/LdapPort/ldapRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="ec155b03-044c-468b-a887-5c4ca630875a" name="Heroku"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://si-actua-client-service.herokuapp.com/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ldap="http://www.example.org/Ldap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ldap:ldapRequest>\r
+         <ldap:userName>ludhiana.jaramillo</ldap:userName>\r
+         <ldap:password>Sipse2020*</ldap:password>\r
+         <ldap:dn>OU=Secretaria de Gobierno,DC=pruebasgobierno,DC=local</ldap:dn>\r
+         <ldap:apyKey>Sdg2020*2020</ldap:apyKey>
+         <ldap:url>https://sdgmultifactor.azurewebsites.net/api/1.0/LdapAutenticateV1/Login</ldap:url>
+      </ldap:ldapRequest>\r
+   </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/Ldap/LdapPort/ldapRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
