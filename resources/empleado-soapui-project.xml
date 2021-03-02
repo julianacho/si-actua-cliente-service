@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="36f15f81-6010-44ac-aa45-c5bf284fce02" activeEnvironment="Default" name="empleado" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="12c41ae6-2475-4280-a696-2945ae13b202" wsaVersion="NONE" name="EmpleadoPortSoap11" type="wsdl" bindingName="{http://www.example.org/Empleado}EmpleadoPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8089/ws/empleado.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8089/ws/empleado.wsdl"><con:part><con:url>http://localhost:8089/ws/empleado.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.example.org/Empleado" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.example.org/Empleado" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/Empleado">
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://www.example.org/Empleado" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="empleadoRequest" type="tns:empleadoRequest"></element>
+      <complexType name="empleadoRequest">
+        <sequence>
+          <element name="nombres" type="string"/>
+          <element name="apellidos" type="string"/>
+          <element name="tipo_documento" type="string"/>
+          <element name="fecha_nacimiento" type="date"/>
+          <element name="fecha_vinculacion" type="date"/>
+          <element name="cargo" type="string"/>
+          <element name="salario" type="double"/>
+          <element name="tiempo_vinculacion" type="string"/>
+          <element name="edad_actual" type="string"/>
+        </sequence>
+      </complexType>
+      <element name="empleadoResponse" type="tns:empleadoResponse"></element>
+      <complexType name="empleadoResponse">
+        <sequence>
+          <element name="id_empleado" type="int"/>
+          <element name="message" type="string"/>
+        </sequence>
+      </complexType>
+      <element name="empleadoFault" type="tns:empleadoFault"/>
+      <complexType name="empleadoFault">
+        <sequence>
+          <element minOccurs="0" name="errorCode" type="integer"/>
+          <element minOccurs="0" name="errorMessage" type="string"/>
+        </sequence>
+      </complexType>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="empleadoResponse">
+    <wsdl:part element="tns:empleadoResponse" name="empleadoResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="empleadoRequest">
+    <wsdl:part element="tns:empleadoRequest" name="empleadoRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="empleadoFault">
+    <wsdl:part element="tns:empleadoFault" name="empleadoFault"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="EmpleadoPort">
+    <wsdl:operation name="empleado">
+      <wsdl:input message="tns:empleadoRequest" name="empleadoRequest"></wsdl:input>
+      <wsdl:output message="tns:empleadoResponse" name="empleadoResponse"></wsdl:output>
+      <wsdl:fault message="tns:empleadoFault" name="empleadoFault"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EmpleadoPortSoap11" type="tns:EmpleadoPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="empleado">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="empleadoRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="empleadoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="empleadoFault">
+        <soap:fault name="empleadoFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmpleadoPortService">
+    <wsdl:port binding="tns:EmpleadoPortSoap11" name="EmpleadoPortSoap11">
+      <soap:address location="http://localhost:8089/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8089/ws</con:endpoint></con:endpoints><con:operation id="4e9460fd-05fd-4b8d-b786-e7183e88bc57" isOneWay="false" action="" name="empleado" bindingOperationName="empleado" type="Request-Response" outputName="empleadoResponse" inputName="empleadoRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5119197f-8470-44bf-8cd7-36e34bbacdf4" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8089/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:emp="http://www.example.org/Empleado">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <emp:empleadoRequest>\r
+         <emp:nombres>1</emp:nombres>\r
+         <emp:apellidos>2</emp:apellidos>\r
+         <emp:tipo_documento>3</emp:tipo_documento>\r
+         <emp:fecha_nacimiento>2020-01-12</emp:fecha_nacimiento>\r
+         <emp:fecha_vinculacion>2020-01-12</emp:fecha_vinculacion>\r
+         <emp:cargo>6</emp:cargo>\r
+         <emp:salario>7</emp:salario>\r
+         <emp:tiempo_vinculacion>8</emp:tiempo_vinculacion>\r
+         <emp:edad_actual>9</emp:edad_actual>\r
+      </emp:empleadoRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/Empleado/EmpleadoPort/empleadoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

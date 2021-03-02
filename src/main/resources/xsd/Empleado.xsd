@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+ targetNamespace="http://www.example.org/Empleado"
+  xmlns:tns="http://www.example.org/Empleado" elementFormDefault="qualified">
+
+    <element name="empleadoRequest"
+    	type="tns:empleadoRequest">
+    </element>
+    
+    <complexType name="empleadoRequest">
+    	<sequence>
+    		<element name="nombres" type="string"></element>
+    		<element name="apellidos" type="string"></element>
+    		<element name="tipo_documento" type="string"></element>
+    		<element name="fecha_nacimiento" type="date"></element>
+    		<element name="fecha_vinculacion" type="date"></element>
+    		<element name="cargo" type="string"></element>
+    		<element name="salario" type="double"></element>
+    		<element name="tiempo_vinculacion" type="string"></element>
+    		<element name="edad_actual" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="empleadoResponse"
+    	type="tns:empleadoResponse">
+    </element>
+    
+    <complexType name="empleadoResponse">
+    	<sequence>
+    		<element name="id_empleado" type="int"></element>
+    		<element name="message" type="string"></element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="empleadoFault" type="tns:empleadoFault"></element>
+    
+    <complexType name="empleadoFault">
+    	<sequence>
+    		<element name="errorCode" type="integer" minOccurs="0"></element>
+    		<element name="errorMessage" type="string" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>
