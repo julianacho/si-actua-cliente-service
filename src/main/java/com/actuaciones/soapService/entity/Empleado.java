@@ -1,4 +1,4 @@
-package com.parameta.jgr.soapService.entity;
+package com.actuaciones.soapService.entity;
 
 
 

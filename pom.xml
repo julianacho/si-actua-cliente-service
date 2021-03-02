@@ -10,11 +10,11 @@
 		<version>2.3.3.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.parameta.jgr</groupId>
-	<artifactId>soapService</artifactId>
+	<groupId>com.actuaciones.soapService</groupId>
+	<artifactId>si-actua-client-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>soapService</name>
-	<description>Demo project for Spring Boot</description>
+	<name>si-actua-client-service</name>
+	<description>Cliente Soap Si Actua</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -43,13 +43,6 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-
-<!-- 		<dependency> -->
-<!-- 			<groupId>mysql</groupId> -->
-<!-- 			<artifactId>mysql-connector-java</artifactId> -->
-<!-- 			<scope>runtime</scope> -->
-<!-- 		</dependency> -->
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -83,9 +76,30 @@
 						<configuration>
 							<outputDirectory>src/main/java</outputDirectory>
 							<clearOutputDir>false</clearOutputDir>
-							<packageName>com.parameta.jgr.soapService.schema</packageName>
+							<packageName>com.actuaciones.soapService.schema</packageName>
 							<schemaDirectory>src/main/resources/xsd</schemaDirectory>
 							<schemaFiles>Empleado.xsd</schemaFiles>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>id1</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>src/main/java</outputDirectory>
+							<clearOutputDir>false</clearOutputDir>
+							<packageName>com.actuaciones.soapService.schema.ldap</packageName>
+							<schemaDirectory>src/main/resources/xsd</schemaDirectory>
+							<schemaFiles>Ldap.xsd</schemaFiles>
 						</configuration>
 					</execution>
 				</executions>

@@ -1,4 +1,4 @@
-package com.parameta.jgr.soapService.ws;
+package com.actuaciones.soapService.ws;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
@@ -41,19 +41,38 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 	 * @param empleadoSchema
 	 * @return
 	 */
-	@Bean(name="empleado")
-	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema empleadoSchema) {
+//	@Bean(name="empleado")
+//	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema empleadoSchema) {
+//		DefaultWsdl11Definition defaultWsdl11Definition = new DefaultWsdl11Definition();
+//		defaultWsdl11Definition.setPortTypeName("EmpleadoPort");
+//		defaultWsdl11Definition.setLocationUri("/ws");
+//		defaultWsdl11Definition.setTargetNamespace("http://www.example.org/Empleado");
+//		defaultWsdl11Definition.setSchema(empleadoSchema);
+//		return defaultWsdl11Definition;
+//	}
+	
+//	@Bean
+//	public XsdSchema collaboratorSchema() {
+//		return new SimpleXsdSchema(new ClassPathResource("xsd/Empleado.xsd"));
+//	}	
+	/**
+	 * Metodoq que registra el schema a partir del xsd 
+	 * @param empleadoSchema
+	 * @return
+	 */
+	@Bean(name="ldap")
+	public DefaultWsdl11Definition defaultWsdl11DefinitionLdapLogin(XsdSchema ldapSchema) {
 		DefaultWsdl11Definition defaultWsdl11Definition = new DefaultWsdl11Definition();
-		defaultWsdl11Definition.setPortTypeName("EmpleadoPort");
+		defaultWsdl11Definition.setPortTypeName("LdapPort");
 		defaultWsdl11Definition.setLocationUri("/ws");
-		defaultWsdl11Definition.setTargetNamespace("http://www.example.org/Empleado");
-		defaultWsdl11Definition.setSchema(empleadoSchema);
+		defaultWsdl11Definition.setTargetNamespace("http://www.example.org/Ldap");
+		defaultWsdl11Definition.setSchema(ldapSchema);
 		return defaultWsdl11Definition;
 	}
 	
 	@Bean
-	public XsdSchema collaboratorSchema() {
-		return new SimpleXsdSchema(new ClassPathResource("xsd/Empleado.xsd"));
+	public XsdSchema collaboratorSchemaLdap() {
+		return new SimpleXsdSchema(new ClassPathResource("xsd/Ldap.xsd"));
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.parameta.jgr.soapService.ws;
+package com.actuaciones.soapService.ws;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
@@ -11,11 +11,11 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import com.parameta.jgr.soapService.entity.Empleado;
-import com.parameta.jgr.soapService.schema.EmpleadoRequest;
-import com.parameta.jgr.soapService.schema.EmpleadoResponse;
-import com.parameta.jgr.soapService.schema.ObjectFactory;
-import com.parameta.jgr.soapService.service.EmpleadoServiceImpl;
+import com.actuaciones.soapService.entity.Empleado;
+import com.actuaciones.soapService.schema.EmpleadoRequest;
+import com.actuaciones.soapService.schema.EmpleadoResponse;
+import com.actuaciones.soapService.schema.ObjectFactory;
+import com.actuaciones.soapService.service.EmpleadoServiceImpl;
 
 /**
  * Clase que establece el endpoint del SOAP
@@ -81,5 +81,6 @@ public class EmpleadoEndpoint<empleadoResponse> {
 		}
 		return empleadoResponse;
 	}
+	
 
 }

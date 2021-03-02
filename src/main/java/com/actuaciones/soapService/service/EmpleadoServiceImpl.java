@@ -1,12 +1,11 @@
-package com.parameta.jgr.soapService.service;
+package com.actuaciones.soapService.service;
 
 //import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-import com.parameta.jgr.soapService.entity.Empleado;
+import com.actuaciones.soapService.entity.Empleado;
 
 /**
  * Servico que gestiona el empleado

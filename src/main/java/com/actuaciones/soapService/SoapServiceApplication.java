@@ -1,4 +1,4 @@
-package com.parameta.jgr.soapService;
+package com.actuaciones.soapService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

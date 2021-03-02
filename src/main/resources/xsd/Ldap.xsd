@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+ targetNamespace="http://www.example.org/Ldap"
+  xmlns:tns="http://www.example.org/Ldap" elementFormDefault="qualified">
+
+    <element name="ldapRequest"
+    	type="tns:ldapRequest">
+    </element>
+    
+    <complexType name="ldapRequest">
+    	<sequence>
+    		<element name="userName" type="string"></element>
+    		<element name="password" type="string"></element>
+    		<element name="dn" type="string"></element>    		
+    	</sequence>
+    </complexType>
+
+    <element name="ldapResponse"
+    	type="tns:ldapResponse">
+    </element>
+    
+    <complexType name="ldapResponse">
+    	<sequence>
+    		<element name="isError" type="boolean"></element>
+    		<element name="messageError" type="string"></element>
+    		<element name="userName" type="string"></element>
+    		<element name="name" type="string"></element>
+    		<element name="password" type="string"></element>
+    		<element name="dn" type="string"></element>
+    		<element name="group" type="string"></element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="ldapFault" type="tns:ldapFault"></element>
+    
+    <complexType name="ldapFault">
+    	<sequence>
+    		<element name="errorCode" type="integer" minOccurs="0"></element>
+    		<element name="errorMessage" type="string" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

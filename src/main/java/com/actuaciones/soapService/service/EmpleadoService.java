@@ -1,6 +1,6 @@
-package com.parameta.jgr.soapService.service;
+package com.actuaciones.soapService.service;
 
-import com.parameta.jgr.soapService.entity.Empleado;
+import com.actuaciones.soapService.entity.Empleado;
 
 /**
  * Establece metodos de gestion de empleado
