@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9dafcdb1-0c51-4dec-a866-a032b65a9b5d" activeEnvironment="Default" name="ldap" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="59ad241a-719b-4551-8017-415b7276c66a" wsaVersion="NONE" name="LdapPortSoap11" type="wsdl" bindingName="{http://www.example.org/Ldap}LdapPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8089/ws/ldap.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8089/ws/ldap.wsdl"><con:part><con:url>http://localhost:8089/ws/ldap.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.example.org/Ldap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.example.org/Ldap" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/Ldap">
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://www.example.org/Ldap" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="ldapRequest" type="tns:ldapRequest"></element>
+      <complexType name="ldapRequest">
+        <sequence>
+          <element name="userName" type="string"/>
+          <element name="password" type="string"/>
+          <element name="dn" type="string"/>
+        </sequence>
+      </complexType>
+      <element name="ldapResponse" type="tns:ldapResponse"></element>
+      <complexType name="ldapResponse">
+        <sequence>
+          <element name="isError" type="boolean"/>
+          <element name="messageError" type="string"/>
+          <element name="userName" type="string"/>
+          <element name="name" type="string"/>
+          <element name="password" type="string"/>
+          <element name="dn" type="string"/>
+          <element name="group" type="string"/>
+        </sequence>
+      </complexType>
+      <element name="ldapFault" type="tns:ldapFault"/>
+      <complexType name="ldapFault">
+        <sequence>
+          <element minOccurs="0" name="errorCode" type="integer"/>
+          <element minOccurs="0" name="errorMessage" type="string"/>
+        </sequence>
+      </complexType>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="ldapRequest">
+    <wsdl:part element="tns:ldapRequest" name="ldapRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ldapFault">
+    <wsdl:part element="tns:ldapFault" name="ldapFault"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ldapResponse">
+    <wsdl:part element="tns:ldapResponse" name="ldapResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LdapPort">
+    <wsdl:operation name="ldap">
+      <wsdl:input message="tns:ldapRequest" name="ldapRequest"></wsdl:input>
+      <wsdl:output message="tns:ldapResponse" name="ldapResponse"></wsdl:output>
+      <wsdl:fault message="tns:ldapFault" name="ldapFault"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LdapPortSoap11" type="tns:LdapPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ldap">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ldapRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ldapResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ldapFault">
+        <soap:fault name="ldapFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LdapPortService">
+    <wsdl:port binding="tns:LdapPortSoap11" name="LdapPortSoap11">
+      <soap:address location="http://localhost:8089/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8089/ws</con:endpoint></con:endpoints><con:operation id="f0834c07-b4c8-4a80-bd17-8878395becea" isOneWay="false" action="" name="ldap" bindingOperationName="ldap" type="Request-Response" outputName="ldapResponse" inputName="ldapRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f18e60ba-d4f5-47ae-bf17-cdbbb795df96" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8089/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ldap="http://www.example.org/Ldap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ldap:ldapRequest>\r
+         <ldap:userName>ludhiana.jaramillo</ldap:userName>\r
+         <ldap:password>Sipse2020*</ldap:password>\r
+         <ldap:dn>OU=Secretaria de Gobierno,DC=pruebasgobierno,DC=local</ldap:dn>\r
+         <ldap:apyKey>Sdg2020*2020</ldap:apyKey>
+         <ldap:url>https://sdgmultifactor.azurewebsites.net/api/1.0/LdapAutenticateV1/Login</ldap:url>
+      </ldap:ldapRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/Ldap/LdapPort/ldapRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

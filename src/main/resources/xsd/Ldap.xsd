@@ -12,6 +12,8 @@
     		<element name="userName" type="string"></element>
     		<element name="password" type="string"></element>
     		<element name="dn" type="string"></element>    		
+    		<element name="apyKey" type="string"></element>
+    		<element name="url" type="string"></element>
     	</sequence>
     </complexType>
 
